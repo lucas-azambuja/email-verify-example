@@ -9,7 +9,7 @@ app.use(cors())
 
 app.get('/email-verify/:email', async (req, res) => {
   const emailAddress = req.params.email
-  const { validFormat, validSmtp, validMx } = await verifyEmail({ emailAddress, verifyMx: true, verifySmtp: true, timeout: 3000 });
+  const { validFormat, validSmtp, validMx } = await verifyEmail({ emailAddress, verifyMx: true, verifySmtp: true, timeout: 8000 });
   const isDisposable = isDisposableEmail(emailAddress)
   const isFree = isFreeEmail(emailAddress)
 
