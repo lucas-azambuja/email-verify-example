@@ -21,7 +21,7 @@ app.get('/email-verify/:email', async (req, res) => {
     message = 'Invalid email format'
   }
 
-  if (!validSmtp) {
+  if (validSmtp === false) { // SMTP can be null
     success = false
     message = 'Invalid SMTP'
   }
