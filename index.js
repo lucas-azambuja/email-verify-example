@@ -1,8 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 const { verifyEmail, isDisposableEmail, isFreeEmail } = require('@devmehq/email-validator-js')
 
-const app = express()
 const port = process.env.PORT || 3001
+
+const app = express()
+app.use(cors())
 
 app.get('/email-verify/:email', async (req, res) => {
   const emailAddress = req.params.email
